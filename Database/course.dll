@@ -13,7 +13,7 @@ create table Film (
 
 
 create table Sessions (
-				Session_number serial primary key,
+		Session_number serial primary key,
                 Session_time time not null,
                 Session_date date not null,
                 Hall_name text not null references Hall on delete cascade,
@@ -34,14 +34,14 @@ create table Place (
 
 
 create table Ticket (
-				Ticket_number bigserial primary key,
+		Ticket_number bigserial primary key,
                 Number_row int not null check (Number_row > 0 and Number_row <= 20) ,
                 Place_number int not null check (Place_number > 0 and Place_number <= 20),
                 Ticket_state text not null,
                 Session_number int not null,
                 Ticket_cost int not null check (Ticket_cost > 0),
                 unique (Number_row, Place_number, Session_number, Ticket_state),
-				foreign key (Place_number, Number_row, Session_number) 
+		foreign key (Place_number, Number_row, Session_number) 
 	references Place (Place_number, Number_row, Session_number) on delete cascade
 );
 
@@ -63,17 +63,17 @@ create table Orders (
 );
 
 create table Ticket_storage(
-				Ticket_number bigserial primary key,
-				Ticket_state text not null,
-				Ticket_cost int not null check (Ticket_cost > 0),
-				Film_name text not null,
-				Login text not null,
-	            Number_row int not null check (Number_row > 0 and Number_row <= 20) ,
+		Ticket_number bigserial primary key,
+		Ticket_state text not null,
+		Ticket_cost int not null check (Ticket_cost > 0),
+		Film_name text not null,
+		Login text not null,
+	        Number_row int not null check (Number_row > 0 and Number_row <= 20) ,
                 Place_number int not null check (Place_number > 0 and Place_number <= 20),
                 Hall_name text not null,
                 Session_time time not null,
                 Session_date date not null,
-				unique (Ticket_state, Number_row, Place_number, Hall_name, Session_time, Session_date)
+		unique (Ticket_state, Number_row, Place_number, Hall_name, Session_time, Session_date)
 );
 -------------------------------
 insert into Hall (Hall_name, Hall_attribute) values ('Зелёный', 'напротив выхода из кинотеатра'), 
