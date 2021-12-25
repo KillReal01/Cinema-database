@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>1</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="3da4663b-26df-4d10-8ce3-a36b751246fd" name="Клиент" objectType="TABLE" physicalName="Client" >
+   <remarks></remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="e77a50dc-c224-4218-af81-a4484fe7212e" autoIncrement="false" autoIncrementSequenceName="Client_ID_client_seq" defaultValue="" name="Login_клиента" nullable="0" physicalName="Login" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="30730267-2e99-471f-b8f2-1b4608bc49fe" autoIncrement="false" autoIncrementSequenceName="Client_FIO_seq" defaultValue="" name="ФИО" nullable="0" physicalName="FIO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="ba7e0b6c-a91a-41ce-959a-a4a27ad28f0d" autoIncrement="false" autoIncrementSequenceName="Client_Additional_information_seq" defaultValue="" name="Дополнительная_информация" nullable="1" physicalName="Additional_information" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="b94626cf-61ba-4a3f-9a43-af6f5fca4919" autoIncrement="false" autoIncrementSequenceName="Client_Number_phone_seq" defaultValue="" name="Номер_телефона" nullable="0" physicalName="Number_phone" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX6" populated="true" UUID="48b89619-29e8-4652-97f1-ef499e236292" clustered="false" name="Client_pk" physicalName="Client_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC7" populated="true" UUID="aa538c3b-eac3-4a09-8cf3-aa6881d49a21" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="Login_клиента" physicalName="Login" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB8" populated="true" UUID="cff7a508-d100-4bc6-8fdb-de2b10ed8cc1" name="Заказ" objectType="TABLE" physicalName="Orders" >
+   <remarks></remarks>
+   <folder id="FOLTAB81" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL9" populated="true" UUID="7e2df1a3-cdd8-4b95-b094-572f6a30843b" autoIncrement="false" autoIncrementSequenceName="Orders_ID_order_seq" defaultValue="" name="ID_заказа" nullable="0" physicalName="ID_order" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL10" populated="true" UUID="41b5acc7-c9cb-4955-a838-b111481b6a2e" autoIncrement="false" autoIncrementSequenceName="Orders_Order_date_seq" defaultValue="" name="Дата_заказа" nullable="0" physicalName="Order_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    <column id="COL11" populated="true" UUID="d7f0d453-7f56-4279-9620-f2e7b93ce706" autoIncrement="false" autoIncrementSequenceName="Orders_Time_order_seq" defaultValue="" name="Время_заказа" nullable="0" physicalName="Time_order" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks></remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="6707cd16-43f2-4de7-8a9d-eb8d8f10f250" autoIncrement="false" autoIncrementSequenceName="Client_ID_client_seq_1" defaultValue="" name="Login_клиента" nullable="0" physicalName="Login" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL13" populated="true" UUID="5999d653-2c6c-453e-b313-b1538a05e9a2" autoIncrement="false" autoIncrementSequenceName="Sessions_New Column_seq" defaultValue="" name="Номер_сеанса" nullable="0" physicalName="Session_number" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB83" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB82" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB84" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX14" populated="true" UUID="88390f4d-f1c7-48e9-bdcc-f7b4ea9235de" clustered="false" name="Orders_pk" physicalName="Orders_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC15" populated="true" UUID="382afe99-8970-4d0d-812b-1cc855cc2ad7" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="ID_заказа" physicalName="ID_order" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB16" populated="true" UUID="18d88b89-8fb7-4d02-bc23-65bdd88e32db" name="Место" objectType="TABLE" physicalName="Place" >
+   <remarks></remarks>
+   <folder id="FOLTAB161" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL17" populated="true" UUID="bb7bff21-08b0-48eb-85c1-24651d2ef0cf" autoIncrement="false" autoIncrementSequenceName="Place_Number_row_seq" defaultValue="" name="Номер_ряда" nullable="0" physicalName="Number_row" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL18" populated="true" UUID="bfefc95e-743f-4e1c-9b5c-5c840d2dcb6f" autoIncrement="false" autoIncrementSequenceName="Place_Place_number_seq" defaultValue="" name="Номер_места" nullable="0" physicalName="Place_number" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="e355dd8e-cd5b-4192-9d74-30dccc2b8e2f" autoIncrement="false" autoIncrementSequenceName="Sessions_Session_number_seq" defaultValue="" name="Номер_сеанса" nullable="0" physicalName="Session_number" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="5648ddfe-e8de-4e97-b491-e7c644d11d09" autoIncrement="false" autoIncrementSequenceName="Place_Seat_category_seq" defaultValue="" name="Категория_места" nullable="0" physicalName="Seat_category" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="0809945a-d41e-4be6-a4ac-4334feeac531" autoIncrement="false" autoIncrementSequenceName="Place_Seat_state_seq" defaultValue="" name="Состояние_места (занято / свободно)" nullable="0" physicalName="Seat_state" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB163" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB162" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB164" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX22" populated="true" UUID="c924b454-43d6-4fa7-8dd7-8369084c7570" clustered="false" name="Place_pk" physicalName="Place_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC23" populated="true" UUID="12d3db0b-c2c9-4f23-a43b-82387265a208" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="Номер_ряда" physicalName="Number_row" />
+     <index-column id="IDC24" populated="true" UUID="7f5fe7d7-9c3c-4bfe-9755-e66218ae9bb1" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="Номер_места" physicalName="Place_number" />
+     <index-column id="IDC25" populated="true" UUID="d4accca2-6b5c-4acf-887e-31c0faa1a680" ascendingOrDescending="UNSPECIFIED" column-ref="COL19" name="Номер_сеанса" physicalName="Session_number" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB26" populated="true" UUID="575aa9b0-9a4a-468e-80c7-e4f2001f1efd" name="Сеанс" objectType="TABLE" physicalName="Sessions" >
+   <remarks></remarks>
+   <folder id="FOLTAB261" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL27" populated="true" UUID="9113e260-99a9-495e-a1b3-4494e67cb6b9" autoIncrement="false" autoIncrementSequenceName="Sessions_Session_number_seq" defaultValue="" name="Номер_сеанса" nullable="0" physicalName="Session_number" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL28" populated="true" UUID="aed4dc40-fba5-4914-84f7-230cee2b8865" autoIncrement="false" autoIncrementSequenceName="Sessions_Hall_name_seq_1" defaultValue="" name="Название_зала" nullable="0" physicalName="Hall_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL29" populated="true" UUID="2865abc8-5e5a-42af-a129-6fd50a835082" autoIncrement="false" autoIncrementSequenceName="Sessions_Session_date_seq_1" defaultValue="" name="Дата_сеанса" nullable="0" physicalName="Session_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    <column id="COL30" populated="true" UUID="7261c9a4-2f15-42d3-a466-dc1b05c23437" autoIncrement="false" autoIncrementSequenceName="Sessions_Session_time_seq_1" defaultValue="" name="Время_сеанса" nullable="0" physicalName="Session_time" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks></remarks>
+    </column>
+    <column id="COL31" populated="true" UUID="9cf2651f-1ba8-478a-8fdb-9aec7b56a88a" autoIncrement="false" autoIncrementSequenceName="Sessions_Session_category_seq" defaultValue="" name="Категория_сеанса" nullable="0" physicalName="Session_category" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL32" populated="true" UUID="347036d9-3d97-4228-8ec1-df60ab907933" autoIncrement="false" autoIncrementSequenceName="Sessions_Film_name_seq" defaultValue="" name="Название_фильма" nullable="1" physicalName="Film_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB263" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB262" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB264" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX33" populated="true" UUID="c9c36663-2ed0-43a3-9a4d-df83cff6444e" clustered="false" name="Sessions_pk" physicalName="Sessions_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC34" populated="true" UUID="b8b9f21c-450b-4381-8248-c4e5bdb9a230" ascendingOrDescending="UNSPECIFIED" column-ref="COL27" name="Номер_сеанса" physicalName="Session_number" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB35" populated="true" UUID="fdc4a074-94f2-4cca-93b1-d6150f385582" name="Фильм" objectType="TABLE" physicalName="Film" >
+   <remarks></remarks>
+   <folder id="FOLTAB351" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL36" populated="true" UUID="8101f2eb-d416-4e75-9a58-a25fb265db32" autoIncrement="false" autoIncrementSequenceName="Film_Film_name_seq_1_1" defaultValue="" name="Название_фильма" nullable="0" physicalName="Film_name" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL37" populated="true" UUID="7dc13012-2ed2-4608-982b-9ee2b45fbc92" autoIncrement="false" autoIncrementSequenceName="Film_Duration_seq" defaultValue="" name="Длительность" nullable="0" physicalName="Duration" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks></remarks>
+    </column>
+    <column id="COL38" populated="true" UUID="c2d35baf-9666-45d5-9d12-3b39c7f237cb" autoIncrement="false" autoIncrementSequenceName="Film_Genre_seq" defaultValue="" name="Жанр" nullable="0" physicalName="Genre" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="4028f174-25e7-41a7-a709-c37815b154b0" autoIncrement="false" autoIncrementSequenceName="Film_Director_seq" defaultValue="" name="Режиссёр" nullable="0" physicalName="Director" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB353" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB352" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB354" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX40" populated="true" UUID="904996c2-7e47-40f1-8159-21de786a297b" clustered="false" name="Film_pk" physicalName="Film_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC41" populated="true" UUID="aed60e03-fce8-410f-a202-720191930d06" ascendingOrDescending="UNSPECIFIED" column-ref="COL36" name="Название_фильма" physicalName="Film_name" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB42" populated="true" UUID="71c7a2d1-f8ae-4e65-ac15-bd101ac507e2" name="Билет" objectType="TABLE" physicalName="Ticket" >
+   <remarks></remarks>
+   <folder id="FOLTAB421" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL43" populated="true" UUID="4a237996-4e50-40fc-9479-fd2bce15bcb6" autoIncrement="false" autoIncrementSequenceName="Ticket_Ticket_number_seq" defaultValue="" name="Номер_билета" nullable="0" physicalName="Ticket_number" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL44" populated="true" UUID="37d93e21-ad37-4675-b16d-af826e02013b" autoIncrement="false" autoIncrementSequenceName="Ticket_Ticket_state_seq" defaultValue="" name="Состояние_билета (покупка / возврат)" nullable="0" physicalName="Ticket_state" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL45" populated="true" UUID="42eb8d6f-09da-4a06-b23d-2f8cfc6d2292" autoIncrement="false" autoIncrementSequenceName="Ticket_Cost_ticket_seq" defaultValue="" name="Стоимость_билета" nullable="0" physicalName="Cost_ticket" precision="4" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+     <remarks></remarks>
+    </column>
+    <column id="COL46" populated="true" UUID="7be4037f-3d33-4e8c-b463-bd12882bda22" autoIncrement="false" autoIncrementSequenceName="Place_Number_row_seq" defaultValue="" name="Номер_ряда" nullable="0" physicalName="Number_row" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL47" populated="true" UUID="f827d81b-ca26-45d6-86fc-f99088f53a95" autoIncrement="false" autoIncrementSequenceName="Place_Place_number_seq" defaultValue="" name="Номер_места" nullable="0" physicalName="Place_number" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL48" populated="true" UUID="54e6815c-14de-45d9-af42-0a709316f11a" autoIncrement="false" autoIncrementSequenceName="Sessions_New Column_seq" defaultValue="" name="Номер_сеанса" nullable="0" physicalName="Session_number" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB423" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB422" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB424" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX49" populated="true" UUID="29f742c3-7888-4bda-9d92-aa45243a7010" clustered="false" name="Ticket_pk" physicalName="Ticket_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC50" populated="true" UUID="5da07a96-5c6b-4778-b700-e514774fb0b8" ascendingOrDescending="UNSPECIFIED" column-ref="COL43" name="Номер_билета" physicalName="Ticket_number" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB51" populated="true" UUID="16906628-2e3e-4ce4-a9cf-3dbef5422be3" name="Зал" objectType="TABLE" physicalName="Hall" >
+   <remarks></remarks>
+   <folder id="FOLTAB511" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL52" populated="true" UUID="2ac461db-b955-46b2-bbda-861135905618" autoIncrement="false" autoIncrementSequenceName="Hall_Hall_name_seq_1" defaultValue="" name="Название_зала" nullable="0" physicalName="Hall_name" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL53" populated="true" UUID="8eda0527-c53a-4296-ac29-dfb3331bffbb" autoIncrement="false" autoIncrementSequenceName="Hall_Hall_attribute_seq" defaultValue="" name="Атрибуты_зала" nullable="1" physicalName="Hall_attribute" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB513" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB512" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB514" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX54" populated="true" UUID="dd080d52-4406-44f8-bff5-7d71bfc6deb1" clustered="false" name="Hall_pk" physicalName="Hall_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC55" populated="true" UUID="3bf0d89a-f3ce-4319-99ce-596fff14864c" ascendingOrDescending="UNSPECIFIED" column-ref="COL52" name="Название_зала" physicalName="Hall_name" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB56" populated="true" UUID="b51094d3-a37a-4026-a3f8-375faf0dba6a" name="Хранилище_данных" objectType="TABLE" physicalName="Storage" >
+   <remarks></remarks>
+   <folder id="FOLTAB561" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL57" populated="true" UUID="643d4e39-b52f-48fa-9931-c9acea5a674f" autoIncrement="false" autoIncrementSequenceName="Storage_Ticket_number_seq" defaultValue="" name="Номер_билета" nullable="0" physicalName="Ticket_number" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL58" populated="true" UUID="f6a7b659-c054-49c8-9e7d-ce5e06fecbfa" autoIncrement="false" autoIncrementSequenceName="Storage_Ticket_state_seq" defaultValue="" name="Состояние_билета (покупка / возврат)" nullable="0" physicalName="Ticket_state" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL59" populated="true" UUID="b9bb50db-9dc5-4fec-b0da-63342ccad762" autoIncrement="false" autoIncrementSequenceName="Storage_login_seq" defaultValue="" name="Логин" nullable="0" physicalName="login" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL60" populated="true" UUID="11306876-da51-4be2-95e7-a3575a8304ae" autoIncrement="false" autoIncrementSequenceName="Storage_Cost_ticket_seq" defaultValue="" name="Стоимость_билета" nullable="0" physicalName="Cost_ticket" precision="4" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+     <remarks></remarks>
+    </column>
+    <column id="COL61" populated="true" UUID="2f4d27bf-3533-4d3d-abea-851e2052fffc" autoIncrement="false" autoIncrementSequenceName="Storage_Number_row_seq" defaultValue="" name="Номер_ряда" nullable="0" physicalName="Number_row" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL62" populated="true" UUID="f67a82cf-8798-4c6a-9f89-5fdd7f108f71" autoIncrement="false" autoIncrementSequenceName="Storage_Film_name_seq" defaultValue="" name="Название_фильма" nullable="0" physicalName="Film_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL63" populated="true" UUID="b8663b34-373c-4cc4-80be-c73b8ed92dd3" autoIncrement="false" autoIncrementSequenceName="Storage_Place_number_seq" defaultValue="" name="Номер_места" nullable="0" physicalName="Place_number" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL64" populated="true" UUID="910c9603-95a9-42e7-97a7-24d206d89900" autoIncrement="false" autoIncrementSequenceName="Storage_Hall_name_seq" defaultValue="" name="Название_зала" nullable="0" physicalName="Hall_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL65" populated="true" UUID="8ca55e08-73b4-4510-aaf3-f85f1985fe5d" autoIncrement="false" autoIncrementSequenceName="Storage_Session_time_seq" defaultValue="" name="Время_сеанса" nullable="0" physicalName="Session_time" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks></remarks>
+    </column>
+    <column id="COL66" populated="true" UUID="1640e6f3-ca65-4118-b5bd-8e27f7e761a9" autoIncrement="false" autoIncrementSequenceName="Storage_Session_date_seq" defaultValue="" name="Дата_сеанса" nullable="0" physicalName="Session_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB563" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB562" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB564" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX67" populated="true" UUID="9adc72b5-cdad-4991-af70-f9055b9614cf" clustered="false" name="Ticket_pk" physicalName="Ticket_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC68" populated="true" UUID="976e14f2-4bc4-42ce-b119-e864662eedb6" ascendingOrDescending="UNSPECIFIED" column-ref="COL57" name="Номер_билета" physicalName="Ticket_number" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL69" populated="true" UUID="ce73328b-4f2f-4a58-8a8e-ee17da2169ea" deferrability="7" deleteRule="3" fk-table-ref="TAB8" fkCardinality="7" identifying="false" name="Client_Orders_fk" physicalName="Client_Orders_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP70" populated="true" UUID="1358a8fa-8861-4b27-98ff-776b7036f892" fk-column-ref="COL12" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL71" populated="true" UUID="6473edaf-eeed-4ee4-b927-64a6a29289d2" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="3" identifying="false" name="Place_Ticket_fk" physicalName="Place_Ticket_fk" pk-table-ref="TAB16" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP72" populated="true" UUID="fa5ce5fe-2577-4c14-ba4d-34f472ffd7ba" fk-column-ref="COL47" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+    <column-mapping id="CMP73" populated="true" UUID="f0745806-7b26-446f-8ba4-a88c35b1a1f6" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL17" />
+   </relationship>
+   <relationship id="REL74" populated="true" UUID="6cdc67d5-5d72-441a-a461-181510dacc67" deferrability="7" deleteRule="3" fk-table-ref="TAB8" fkCardinality="7" identifying="false" name="Sessions_Orders_fk" physicalName="Sessions_Orders_fk" pk-table-ref="TAB26" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP75" populated="true" UUID="e0417bc4-8681-4f19-abf2-cd8fe3e38608" fk-column-ref="COL13" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL27" />
+   </relationship>
+   <relationship id="REL76" populated="true" UUID="0d8da4c3-bdb9-4368-8962-995e818d7db5" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="7" identifying="false" name="Sessions_Ticket_fk" physicalName="Sessions_Ticket_fk" pk-table-ref="TAB26" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP77" populated="true" UUID="8a71edab-7026-4354-be4d-6c7df5e15162" fk-column-ref="COL48" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL27" />
+   </relationship>
+   <relationship id="REL78" populated="true" UUID="30cb70b9-337e-4988-b8b4-217757f08674" deferrability="7" deleteRule="3" fk-table-ref="TAB16" fkCardinality="7" identifying="true" name="Sessions_Place_fk" physicalName="Sessions_Place_fk" pk-table-ref="TAB26" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP79" populated="true" UUID="959110ad-fb55-47c6-aba7-03b47da36aba" fk-column-ref="COL19" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL27" />
+   </relationship>
+   <relationship id="REL80" populated="true" UUID="3e2e5312-4861-4901-9274-e3b8ac6331dc" deferrability="7" deleteRule="3" fk-table-ref="TAB26" fkCardinality="7" identifying="false" name="Film_Session_fk" physicalName="Film_Session_fk" pk-table-ref="TAB35" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP81" populated="true" UUID="75d66f31-ec72-4088-a70c-9ac2e16201a8" fk-column-ref="COL32" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL36" />
+   </relationship>
+   <relationship id="REL82" populated="true" UUID="fe8d6ab0-8e68-4c6e-9d92-6891d47d7f57" deferrability="7" deleteRule="3" fk-table-ref="TAB26" fkCardinality="7" identifying="true" name="Hall_Session_fk" physicalName="Hall_Session_fk" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP83" populated="true" UUID="8596d232-7a27-4f0e-9bf1-70ccaec38632" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="48" y="72" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB8" x="395" y="76" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB16" x="593" y="469" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB26" x="400" y="260" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB35" x="62" y="262" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB42" x="143" y="466" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB51" x="741" y="271" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB56" x="721" y="53" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL69" pkConnection="0.5176470588235295" fkConnection="0.40404040404040403" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL82" pkConnection="0.49122807017543857" fkConnection="0.34513274336283184" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL80" pkConnection="0.49411764705882355" fkConnection="0.3893805309734513" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL74" pkConnection="0.48" fkConnection="0.5067873303167421" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL71" pkConnection="0.494949494949495" fkConnection="0.46017699115044247" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL76" pkConnection="0.1288888888888889" fkConnection="0.9050632911392406" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL78" pkConnection="0.9288888888888889" fkConnection="0.05177993527508091" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>

@@ -1,0 +1,282 @@
+create table Hall (
+                Hall_name text primary key,
+                Hall_attribute text default null
+);
+
+
+create table Film (
+                Film_name text primary key,
+                Duration time not null,
+                Genre text not null,
+                Director text not null
+);
+
+
+create table Sessions (
+				Session_number serial primary key,
+                Session_time time not null,
+                Session_date date not null,
+                Hall_name text not null references Hall on delete cascade,
+                Session_category text not null,
+                Film_name text references Film on delete cascade,
+                unique (Session_time, Session_date, Hall_name)
+);
+
+
+create table Place (
+                Number_row int,
+                Place_number int,
+                Session_number int references Sessions on delete cascade,
+                Seat_category text not null,
+                Seat_state text not null,
+                primary key (Number_row, Place_number, Session_number)
+);
+
+
+create table Ticket (
+				Ticket_number bigserial primary key,
+                Number_row int not null check (Number_row > 0 and Number_row <= 20) ,
+                Place_number int not null check (Place_number > 0 and Place_number <= 20),
+                Ticket_state text not null,
+                Session_number int not null,
+                Ticket_cost int not null check (Ticket_cost > 0),
+                unique (Number_row, Place_number, Session_number, Ticket_state),
+				foreign key (Place_number, Number_row, Session_number) 
+	references Place (Place_number, Number_row, Session_number) on delete cascade
+);
+
+
+create table Client (
+                Login text primary key,
+                FIO text not null,
+                Additional_information text default null,
+                Number_phone text not null unique
+);
+
+
+create table Orders (
+                ID_order serial primary key,
+                Order_date date not null,
+                Time_order time not null,
+                Session_number int references Sessions on delete set null,
+                Login text not null references Client on delete cascade
+);
+
+create table Ticket_storage(
+				Ticket_number bigserial primary key,
+				Ticket_state text not null,
+				Ticket_cost int not null check (Ticket_cost > 0),
+				Film_name text not null,
+				Login text not null,
+	            Number_row int not null check (Number_row > 0 and Number_row <= 20) ,
+                Place_number int not null check (Place_number > 0 and Place_number <= 20),
+                Hall_name text not null,
+                Session_time time not null,
+                Session_date date not null,
+				unique (Ticket_state, Number_row, Place_number, Hall_name, Session_time, Session_date)
+);
+-------------------------------
+insert into Hall (Hall_name, Hall_attribute) values ('Зелёный', 'напротив выхода из кинотеатра'), 
+('Красный', 'около фуркорта'), ('Синий', default);
+
+insert into Client (Login, FIO, Additional_information, Number_phone) values 
+('frog', 'Грошев Ф. П.', 'не проверяет дз', '8965446426'), ('fisdkgh', 'Синев А. А.', default, '8646845454'),
+('killreal', 'Энтина С. П.', 'молодец', '8938543578'), ('riki', 'Мамонтов А. Л.', default, '8646994575');
+
+insert into Film (Film_name, Duration, Genre, Director) values 
+('Человек-паук', '01:15', 'триллер', 'Бабушкин Ф. П.'), ('Время', '01:50', 'драма', 'Дедушкин П. П.'),
+('Зомби', '02:05', 'ужасы', 'Внуков Ф. Ф.');
+
+insert into Sessions (Session_time, Session_date, Hall_name, Session_category, Film_name) values 
+('21:15', '2021.12.20', 'Зелёный', '2D', 'Человек-паук'), ('11:10', '2021.12.21', 'Красный', '3D', 'Человек-паук'),
+('20:55', '2021.12.20', 'Синий', 'IMAX 3D', 'Время'), ('01:15', '2021.12.22', 'Красный', '4D', 'Зомби'),
+('19:15', '2021.12.25', 'Зелёный', '3D', 'Человек-паук'), ('15:15', '2021.12.27', 'Красный', '4D', 'Человек-паук'),
+('18:05', '2021.12.30', 'Синий', 'IMAX 3D', 'Время'), ('03:15', '2021.12.26', 'Красный', '2D', 'Зомби');
+
+insert into Ticket_storage(Ticket_state, Ticket_cost, Film_name, Login, Number_row, Place_number, 
+				 Session_time, Session_date, Hall_name) values 
+				 ('покупка', 250, 'Человек-паук', 'frog', 6, 12, '21:15', '2021.12.20', 'Зелёный'),
+				 ('покупка', 250, 'Человек-паук', 'killreal', 6, 13, '21:15', '2021.12.20', 'Зелёный'),
+				 ('покупка', 350, 'Зомби', 'frog', 6, 12, '01:15', '2021.12.22', 'Красный'),
+				 ('покупка', 350, 'Зомби', 'killreal', 5, 12, '01:15', '2021.12.22', 'Красный'),
+				 ('покупка', 350, 'Зомби', 'riki', 5, 18, '01:15', '2021.12.22', 'Красный');
+
+insert into Ticket_storage(Ticket_state, Ticket_cost, Film_name, Login, Number_row, Place_number, 
+				 Session_time, Session_date, Hall_name) values 				 
+('возврат', 250, 'Человек-паук', 'frog', 6, 12, '21:15', '2021.12.20', 'Зелёный');
+------------------------------
+select * from Hall;
+select * from Film;
+
+select * from Sessions
+order by  session_date, session_time
+
+select * from Client;
+select * from Ticket;
+
+select * from Place
+where seat_state = 'занято';
+
+select * from Orders;
+select * from Ticket_storage;
+----------------------------
+--триггер на заполнение таблицы Place
+create trigger tr_insert_place after insert
+	on Sessions for each row execute function f_insert_place();
+
+create or replace function f_insert_place() returns trigger
+as
+$$
+begin
+  	 for i in 1..20 loop
+   	 	 for j in 1..20 loop
+		 		if new.Hall_name = 'Зелёный' then
+      				insert into Place (Number_row, Place_number, Session_number, Seat_category, Seat_state)
+      				select  i, j, new.Session_number, 'кресло','свободно';
+				end if;
+				if new.Hall_name = 'Красный' then
+      				insert into Place (Number_row, Place_number, Session_number, Seat_category, Seat_state)
+      				select  i, j, new.Session_number, 'диван','свободно';
+				end if;
+				if new.Hall_name = 'Синий' then
+      				insert into Place (Number_row, Place_number, Session_number, Seat_category, Seat_state)
+      				select  i, j, new.Session_number, 'диван + столик','свободно';
+				end if;
+	 	 end loop;
+  	 end loop;
+return (new);
+end;
+$$ language plpgsql;
+
+--триггер на заполнение таблицы Orders
+create trigger tr_order before insert
+	on Ticket_storage for each row execute function f_insert_order();
+
+create or replace function f_insert_order() returns trigger
+as
+$$
+begin
+insert into Orders (Order_date, Time_order, Session_number, Login) 
+values (current_date, current_time, 
+		(select Session_number 
+		 from Sessions s
+		 where (s.Session_time = new.Session_time and s.Session_date = new.Session_date
+						   and s.Hall_name = new.Hall_name)),
+		new.Login);
+return (new);
+end;
+$$ language plpgsql;
+
+--триггер на заполнение таблицы Ticket
+create trigger tr_ticket before insert
+	on Ticket_storage for each row execute function f_insert_ticket();
+
+create or replace function f_insert_ticket() returns trigger
+as
+$$
+begin
+insert into Ticket (Number_row, Place_number, Ticket_state, Ticket_cost, Session_number) 
+values (new.Number_row, new.Place_number, new.Ticket_state, new.Ticket_cost, 
+		(select Session_number 
+		 from Sessions s
+		 where (s.Session_time = new.Session_time and s.Session_date = new.Session_date
+				and s.Hall_name = new.Hall_name)));
+return (new);
+end;
+$$ language plpgsql;
+
+--триггер на изменение таблицы Place
+create trigger tr_place_change before insert
+	on Ticket_storage for each row execute function f_change_place();
+
+create or replace function f_change_place() returns trigger
+as
+$$
+begin
+if new.Ticket_state = 'покупка' then
+update Place p
+set seat_state = 'занято'
+where (p.Number_row = new.Number_row and p.Place_number = new.Place_number and p.Seat_state = 'свободно'
+	   and p.Session_number = (select Session_number 
+							   from Sessions s
+							   where (s.Session_time = new.Session_time and s.Session_date = new.Session_date
+									  and s.Hall_name = new.Hall_name)));
+else
+update Place p
+set seat_state = 'свободно'
+where (p.Number_row = new.Number_row and p.Place_number = new.Place_number and p.Seat_state = 'занято'
+	   and p.Session_number = (select Session_number 
+							   from Sessions s
+							   where (s.Session_time = new.Session_time and s.Session_date = new.Session_date
+									  and s.Hall_name = new.Hall_name)));
+end	if;								  
+return (new);
+end;
+$$ language plpgsql;
+
+--запросы
+
+--прибыль за 2021 год
+select sum(case when ticket_state = 'покупка' then ticket_cost else -ticket_cost end) from Ticket_storage
+where extract(year from Session_date) = 2021;
+
+--количество заказов у каждого клиента
+select login, count(id_order) c from Orders
+full join client using (login)
+group by login
+order by c desc
+
+--ряд(ы) в зале, который чаще всего выбирают
+with num as(
+select Number_row, count(Number_row) c from Place
+where Seat_state = 'занято'
+group by Number_row)
+
+select Number_row from num
+where c = (select max(c) from num)
+group by num.Number_row
+order by num.Number_row
+
+--фильм(ы) с наибольшим рейтингом
+with r as(
+select film_name, count(*) c from Sessions
+group by film_name)
+
+select r.film_name from r
+where c = (select max(c) from r)
+group by r.film_name	   
+
+--частые клиенты (max число заказов)
+with l as(
+select login, count(*) c from Orders
+group by Login)
+
+select l.Login from l
+where c = (select max(c) from l)
+group by l.Login
+
+--постоянные клиенты (имеют > 1 заказа, между заказами не более 30 дней)
+select Login
+from Orders
+join Sessions using (Session_number)
+join (select Login, max(inf.dif)
+	  from (select Login, lead(Session_date, 1, null) over (partition by Login order by Session_date) - Session_date dif
+			from Orders
+			join Sessions using (Session_number)
+			group by Login, Session_date
+		   ) as inf
+	  group by Login
+	 ) as y using (Login)
+where y.max <= 30
+group by Login
+having ((current_date - max(Session_date)) <= 30 and count(Session_date) > 1)
+
+------------------------------
+drop table Hall cascade;
+drop table Film cascade;
+drop table Sessions cascade;
+drop table Client cascade;
+drop table Ticket cascade;
+drop table Ticket_storage cascade;
+drop table Place cascade;
+drop table Orders cascade;
